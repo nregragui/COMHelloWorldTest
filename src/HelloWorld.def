@@ -1,0 +1,6 @@
+LIBRARY "HelloWorldCOM"
+EXPORTS
+    DllRegisterServer @1
+    DllUnregisterServer @2
+    HelloWorld @3
+    HelloWorldVar @4

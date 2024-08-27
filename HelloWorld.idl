@@ -1,0 +1,28 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+    object,
+    uuid(XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX), // Replace with a unique GUID
+    dual,
+    nonextensible,
+    pointer_default(unique)
+]
+interface IHelloWorld : IDispatch {
+    [id(1)] HRESULT HelloWorld([in, out] BSTR* input);
+};
+
+[
+    uuid(XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX), // Replace with a unique GUID
+    version(1.0),
+    helpstring("HelloWorldCOM 1.0 Type Library")
+]
+library HelloWorldCOMLib {
+    importlib("stdole2.tlb");
+    [
+        uuid(XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX) // Replace with a unique GUID
+    ]
+    coclass HelloWorld {
+        [default] interface IHelloWorld;
+    };
+};
